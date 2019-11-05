@@ -14,6 +14,7 @@ public class Message {
 	private String user;
 	private String text;
 	
+	
 	Message(int year, int month, int day, int hour, int minute, String user, String text) {
 		this.year = year;
 		this.month = month;
