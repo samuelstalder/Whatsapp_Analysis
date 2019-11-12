@@ -89,6 +89,7 @@ messageperday <username>
 
 ## Good to know
 * The parameter <username> is always optional. If nothing is specified, it takes all participants.
+* It still contains some mistakes. 
 
 ## Announcement
 
