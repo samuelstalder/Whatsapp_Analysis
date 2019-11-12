@@ -1,7 +1,7 @@
 # WhatsappAnalysis
  
-Version: 0.2 (12.11.2019)
-Author: Samuel Stalder
+* Version: 0.2 (12.11.2019)
+* Author: Samuel Stalder
 
 ## Commands
 
@@ -65,6 +65,27 @@ Get the top 10 most written words:
 ```
 wordlist <username>
 ```
+Get the average length of a message:
+```
+avmessagelength <username>
+```
+Get the average messages per day:
+```
+avmessagesperday
+```
+Get the percentage of media:
+```
+mediapermessage <username>
+```
+Get the percentage of messages per person:
+```
+messagesperperson <username>
+```
+Get the percentage of messages per day:
+```
+messageperday <username>
+```
+
 
 ## Good to know
 * The parameter <username> is always optional. If nothing is specified, it takes all participants.
@@ -72,3 +93,5 @@ wordlist <username>
 ## Announcement
 
 * W-Guessing-Game
+* GUI
+* Word-Prediction
