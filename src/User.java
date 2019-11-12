@@ -3,6 +3,10 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * @author Samuel Stalder
+ * @version 12.11.2019
+ */
 public class User {
 	private String name;
 	private int numberOfWords;

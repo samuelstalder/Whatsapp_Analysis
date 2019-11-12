@@ -6,6 +6,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Samuel Stalder
+ * @version 12.11.2019
+ */
 public class Import {
 	
 	// 22.09.19, is the format - first two char must be 2 long, followed by a ","

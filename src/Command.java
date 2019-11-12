@@ -1,5 +1,9 @@
 
 
+/**
+ * @author Samuel Stalder
+ * @version 12.11.2019
+ */
 public class Command {
 	//general
 	public static final String IMPORT_FILE = "import";

@@ -5,6 +5,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * @author Samuel Stalder
+ * @version 12.11.2019
+ */
 public class Request {
 	List<Message> messageList = new ArrayList<>();
 	List<Word> wordList = new ArrayList<>();

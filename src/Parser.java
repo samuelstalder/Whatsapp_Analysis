@@ -1,9 +1,8 @@
 import java.util.Scanner;
 
-
 /**
  * @author Samuel Stalder
- * @version 10.11.2019
+ * @version 12.11.2019
  */
 public class Parser {
 

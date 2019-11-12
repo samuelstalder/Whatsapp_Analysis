@@ -4,6 +4,10 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+/**
+ * @author Samuel Stalder
+ * @version 12.11.2019
+ */
 public class Message {
 	private int year;
 	private int month;
