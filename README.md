@@ -1,7 +1,8 @@
 # WhatsappAnalysis
- 
-* Version: 0.2 (12.11.2019)
-* Author: Samuel Stalder
+
+## How to use 
+Export your chat from your Whatsapp...
+(Coming Soon)
 
 ## Commands
 
@@ -96,3 +97,8 @@ messageperday <username>
 * W-Guessing-Game
 * GUI
 * Word-Prediction
+
+## Additional information
+ 
+* Version: 0.2 (12.11.2019)
+* Author: Samuel Stalder
