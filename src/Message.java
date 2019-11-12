@@ -43,6 +43,10 @@ public class Message {
 		return month;
 	}
 	
+	public int getDay() {
+		return day;
+	}
+	
 	public int getHour() {
 		return hour;
 	}

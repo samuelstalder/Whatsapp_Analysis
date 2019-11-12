@@ -1,100 +1,96 @@
 import java.io.*;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Analysis {
 
-	// 22.09.19, is the format - first two char must be 2 long, followed by a ","
-	// etc.
-	private final String regexDateV2 = "\\d{1,2}\\.{1}\\d{1,2}\\.{1}\\d{1,2}\\,.*";
-
 	private static List<Message> messageList = new ArrayList<>();
-	private static List<Word> wordList = new ArrayList<>();
-	private String notAllLowerCaseLetterRegex = "[^a-zäöü ]*";
 
-	private void precessFileData(String filePath) throws IOException {
-		File file = new File(filePath);
-		BufferedReader br = new BufferedReader(new FileReader(file, StandardCharsets.UTF_8));
-
-		String singleLine;
-		while ((singleLine = br.readLine()) != null) {
-			if (singleLine.matches(regexDateV2)) {
-				// new line (may still have errors)
-				String dateAsString = singleLine.substring(0, 15);
-				String[] stringSplitForUser = singleLine.split(":");
-				int year = Integer.parseInt(dateAsString.substring(6, 8));
-				int month = Integer.parseInt(dateAsString.substring(3, 5));
-				int day = Integer.parseInt(dateAsString.substring(0, 2));
-				int hour = Integer.parseInt(dateAsString.substring(10, 12));
-				int minute = Integer.parseInt(dateAsString.substring(13, 15));
-				String user = stringSplitForUser[1].substring(5);
-				String text = "";
-				if (stringSplitForUser.length >= 3) {
-					text = stringSplitForUser[2];
-				}
-				Message Message = new Message(year, month, day, hour, minute, user, text);
-				messageList.add(Message);
-				// System.out.println(stringSplitForUser[1].substring(5));
-			} else {
-				// its still text
-				// add the hole line as text to the last added object in arraylist
-				Message lastAddedElement = messageList.get(messageList.size() - 1);
-				lastAddedElement.setText(lastAddedElement.getText() + singleLine);
-				messageList.set(messageList.size() - 1, lastAddedElement);
-			}
-
-		}
-	}
-
-	private void processMessages() {
-		String largeString = "";
-		for (int i = 0; i < messageList.size(); i++) {
-			largeString += messageList.get(i).getText();
-		}
-		largeString = largeString.toLowerCase();
-		// remove all special character
-		largeString = largeString.replaceAll(notAllLowerCaseLetterRegex, "");
-
-		String[] wordArray = largeString.split(" ");
-		for (int i = 0; i < wordArray.length; i++) {
-			if (foundSameWord(wordArray[i])) {
-				updateAmountOfWord(wordArray[i]);
-			} else {
-				wordList.add(new Word(wordArray[i], 1));
-			}
-		}
-	}
-
-	private boolean foundSameWord(String word) {
-		for (Word w : wordList) {
-			if (w.getName().equals(word)) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	private void updateAmountOfWord(String word) {
-		for (Word w : wordList) {
-			if (w.getName().equals(word)) {
-				w.counterUpAmount();
-			}
-		}
-	}
 
 	public static void main(String[] args) throws IOException {
 		Analysis analysis = new Analysis();
-		String filePath = "test.txt";
-		analysis.precessFileData(filePath);
-		analysis.processMessages();
-		Request req = new Request(messageList, wordList);
-		List<Word> top50Words = req.mostWrittenWords(50);
-		Output out = new Output();
-		out.printWordList(top50Words, wordList.size());
-		out.printActiveHour(req.activeHour());
+		Parser parser = new Parser();
+		Output output = new Output();
+		//List<Word> top50Words = req.mostWrittenWords(50);
+		//output.printWordList(top50Words, wordList.size());
+		//output.printActiveHour(req.activeHour());
+		output.welcome();
+		while(true) {
+			Command command = parser.readInput();
+			analysis.triggerCommand(command);
+		}		
+	}
+	
+	public void triggerCommand(Command command) {
+		Import imp = new Import();
+		Output output = new Output();
+		Request request = new Request(messageList);
+		switch (command.getWord()) {
+		case Command.IMPORT_FILE:
+			try {
+				messageList = imp.precessFileData(command.getParam1());
+				output.importFile();
+			} catch (IOException e) {
+				output.wrongFile();
+			}
+			break;
+		case Command.HELP:
+			output.help();
+			break;
+		case Command.NAMES:
+			HashMap<String, Integer> names = request.usernames();
+			output.usernames(names);
+			break;
+		case Command.ANALYSIS:
+			List<Word> wordList = request.analysis();
+			output.analysis(wordList, request.totalWords());
+			break;
+		case Command.START_GAME:
+			Game wGuessingGame = new Game();
+			wGuessingGame.start();
+			break;
+		case Command.CREDITS:
+			output.credits();
+			break;
+		case Command.SEARCH_WORD:
+			request.searchWord(command.getParam1(), command.getParam3());
+			break;
+		case Command.TIMESPAN:
+			output.timeSpan(request.timeSpan());
+			break;
+		case Command.TIMETABLE:
+			output.timeTable(request.timeTable(command.getParam1()));
+			break;
+		case Command.TOTAL_LETTERS:
+			output.totalLetters(request.totalLetters(command.getParam1()));
+			break;
+		case Command.TOTAL_WORDS:
+			output.totalWords(request.totalWords(command.getParam1()));
+			break;
+		case Command.TOTAL_MESSAGES:
+			output.totalMessages(request.totalMessages(command.getParam1()));
+			break;
+		case Command.FAVORITE_EMOJI:
+			output.favoriteEmoji(request.favoriteEmoji());
+			break;
+		case Command.FAVORITE_WORDS:
+			output.favoriteWords(request.favoriteWords());
+			break;
+		case Command.INVALID_COMMAND:
+			output.wrongCommand();
+			break;
+		case Command.INVALID_PARAM:
+			output.wrongParam();
+			break;
+		default:
+			output.wrongCommand();
+			break;
+		}
 	}
 
 }
