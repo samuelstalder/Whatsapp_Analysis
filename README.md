@@ -32,7 +32,7 @@ credits
 ```
 Get all messages with e specific word in it:
 ```
-searchword <username>
+searchword <username> <word>
 ```
 Get the creation date of the chat:
 ```
