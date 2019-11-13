@@ -97,6 +97,10 @@ messageperday <username>
 * W-Guessing-Game
 * GUI
 * Word-Prediction
+* Telegram-Chat 
+* IOS-Whatsapp
+* Profiling 
+* Dialektübersetzer
 
 ## Additional information
  
