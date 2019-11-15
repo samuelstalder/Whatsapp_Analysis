@@ -1,6 +1,4 @@
-import java.util.Calendar;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+package ch.developed.WhatsappAnalysis;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -18,8 +16,10 @@ public class Message {
 	private String user;
 	private String text;
 	
+	private boolean isMedia;
 	
-	Message(int year, int month, int day, int hour, int minute, String user, String text) {
+	
+	Message(int year, int month, int day, int hour, int minute, String user, String text, Boolean isMedia) {
 		this.year = year;
 		this.month = month;
 		this.day = day;
@@ -27,6 +27,7 @@ public class Message {
 		this.minute = minute;
 		this.user = user;
 		this.text = text;
+		this.isMedia = isMedia;
 	}
 	
 	public LocalDate getDate() {		
@@ -65,5 +66,9 @@ public class Message {
 	
 	public String getUser() {
 		return user;
+	}
+	
+	public boolean isMedia() {
+		return isMedia;
 	}
 }

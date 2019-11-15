@@ -1,3 +1,4 @@
+package ch.developed.WhatsappAnalysis;
 import java.io.*;
 import java.util.Collections;
 import java.util.Comparator;
@@ -7,6 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * @author Samuel Stalder
+ * @version 12.11.2019
+ */
 public class Analysis {
 
 	private static List<Message> messageList = new ArrayList<>();
@@ -75,6 +80,8 @@ public class Analysis {
 		case Command.TOTAL_MESSAGES:
 			output.totalMessages(request.totalMessages(command.getParam1()));
 			break;
+		case Command.TOTAL_MEDIA:
+			output.totalMedia(request.totalMedia(command.getParam1()));
 		case Command.FAVORITE_EMOJI:
 			output.favoriteEmoji(request.favoriteEmoji());
 			break;

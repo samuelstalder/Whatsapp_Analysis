@@ -1,3 +1,4 @@
+package ch.developed.WhatsappAnalysis;
 
 /**
  * @author Samuel Stalder

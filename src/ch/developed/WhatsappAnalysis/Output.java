@@ -1,3 +1,5 @@
+package ch.developed.WhatsappAnalysis;
+import java.time.Period;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -78,8 +80,8 @@ public class Output {
 		
 	}
 	
-	public void timeSpan(String date) {
-		System.out.println("This chat was lounched on: " + date);
+	public void timeSpan(Period period) {
+		System.out.println("Period of existence: " + period.getDays() + " Days, " + period.getMonths() + " Months, " + period.getYears() + " Years");
 	}
 	
 	
@@ -105,6 +107,10 @@ public class Output {
 	
 	public void totalLetters(int amount) {
 		System.out.println("Amount of written letters: " + amount);
+	}
+	
+	public void totalMedia(int amount) {
+		System.out.println("Amount of sent media: " + amount);
 	}
 	
 	public void favoriteEmoji(String emoji) {

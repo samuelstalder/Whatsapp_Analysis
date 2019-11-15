@@ -1,3 +1,4 @@
+package ch.developed.WhatsappAnalysis;
 import java.util.Scanner;
 
 /**
@@ -75,6 +76,12 @@ public class Parser {
 				break;
 			case Command.TOTAL_MESSAGES:
 				command.setWord(Command.TOTAL_MESSAGES);
+				if (word.length >= 2) {
+					command.setParam1(getFirstTextInBrackets(input));
+				}
+				break;
+			case Command.TOTAL_MEDIA: 
+				command.setWord(Command.TOTAL_MEDIA);
 				if (word.length >= 2) {
 					command.setParam1(getFirstTextInBrackets(input));
 				}

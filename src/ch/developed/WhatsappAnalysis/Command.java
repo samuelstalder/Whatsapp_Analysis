@@ -1,3 +1,4 @@
+package ch.developed.WhatsappAnalysis;
 
 
 /**
@@ -17,9 +18,10 @@ public class Command {
 	public static final String TIMESPAN = "timespan";
 	public static final String TIMETABLE = "timetable";
 	//total numbers
-	public static final String TOTAL_MESSAGES = "totmessages";
-	public static final String TOTAL_WORDS = "totwords";
-	public static final String TOTAL_LETTERS = "totletters";
+	public static final String TOTAL_MESSAGES = "totalmessages";
+	public static final String TOTAL_WORDS = "totalwords";
+	public static final String TOTAL_LETTERS = "totalletters";
+	public static final String TOTAL_MEDIA = "totalmedia";
 	//tops
 	public static final String FAVORITE_EMOJI = "emoji";
 	public static final String FAVORITE_WORDS = "words";

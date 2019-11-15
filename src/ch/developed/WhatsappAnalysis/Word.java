@@ -1,3 +1,4 @@
+package ch.developed.WhatsappAnalysis;
 
 /**
  * @author Samuel Stalder
@@ -9,6 +10,7 @@ public class Word {
 	private int amount;
 	private String info;
 	private int group; //similar words in one group, saved in a list of groups,
+	private boolean isEmoji = false;
 	
 	public Word(String name, int amount) {
 		this.name = name;
@@ -51,6 +53,12 @@ public class Word {
 		this.group = group;
 	}
 	
+	public void setEmoji(boolean isEmoji) {
+		this.isEmoji = isEmoji;
+	}
 	
+	public boolean isEmoji() {
+		return isEmoji;
+	}
 	
 }
