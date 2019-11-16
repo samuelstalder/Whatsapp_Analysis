@@ -22,7 +22,7 @@ Get a overview analysis:
 ```
 analysis
 ```
-Start game "W-Guessing-Game". (Coming soon :)):
+Start game "W-Guessing-Game" (Coming soon :)):
 ```
 startgame
 ```
@@ -30,7 +30,7 @@ To honor the developer:
 ```
 credits
 ```
-Get all messages with e specific word in it:
+Get all messages with a specific word in it:
 ```
 searchword <username> <word>
 ```
@@ -54,13 +54,13 @@ Get the amount of posted messages:
 ```
 totmessages <username>
 ```
-Get the most typed emoji:
+Get the most typed emoji: (Coming soon)
 ```
 emoji <username>
 ```
 Get the most active hour of the day:
 ```
-active <username>
+activehour
 ```
 Get the top 10 most written words:
 ```
