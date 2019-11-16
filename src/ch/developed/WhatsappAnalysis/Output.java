@@ -60,7 +60,7 @@ public class Output {
 	}
 	
 	public void analysis(List<Word> wordList, int numberOfAllWords) {	
-		for (int i = 0; i < wordList.size(); i++) {
+		for (int i = wordList.size()-1; i >= 0; i--) {
 			String name = wordList.get(i).getName();
 			int amount = wordList.get(i).getAmount();
 			double probability = Double.valueOf(100.0 / numberOfAllWords * amount);
@@ -71,7 +71,7 @@ public class Output {
 
 	
 	public void credits() {
-		System.out.println("Name: WhatsappAnalysis\r\n "
+		System.out.println("Name: WhatsappAnalysis\r\n"
 				+ "Version: 0.1 (10.11.2019)\r\n"
 				+ "Author: Samuel Stalder");
 	}
@@ -121,6 +121,10 @@ public class Output {
 		System.out.println("The most active day: "+ day +":" + month + ":" + year);
 	}
 	
+	public void activeHour(int hour) {
+		System.out.println("The most active hour of the day: " + hour + ":00 - " + (hour+1) + ":00");
+	}
+	
 	/**
 	 * Key
 	 * ich
@@ -135,12 +139,26 @@ public class Output {
 		}
 	}
 	
-	public void averageMessageLength(int amountOfWords) {
+	public void averageMessageLength(double amountOfWords) {
 		System.out.println("The average message has " + amountOfWords + " words in it.");
 	}
 	
-	public void averageMessagePerDay(int amountOfMessages) {
+	public void averageMessagePerDay(double amountOfMessages) {
 		System.out.println("The average posting is " + amountOfMessages + " messages a day");
+	}
+	
+	public void mediaPerMessage(double number) {
+		System.out.println(number + " % of all messages are media posts");
+	}
+	
+	/*
+	public void messagePerPerson(int number) {
+		System.out.println( "%");
+	}
+	*/
+	
+	public void messagePerDay(double number) {
+		System.out.println(number + " messages every day");
 	}
 	
 	public void welcome() {

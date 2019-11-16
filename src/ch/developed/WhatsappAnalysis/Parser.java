@@ -92,11 +92,15 @@ public class Parser {
 					command.setParam1(getFirstTextInBrackets(input));
 				}
 				break;
+			case Command.ACTIVE_HOUR:
+				command.setWord(Command.ACTIVE_HOUR);
+				break;
 			case Command.FAVORITE_WORDS:
 				command.setWord(Command.FAVORITE_WORDS);
 				if (word.length >= 2) {
 					command.setParam1(getFirstTextInBrackets(input));
 				}
+				break;
 			case Command.AVERAGE_MESSAGE_LENGTH:
 				command.setWord(Command.AVERAGE_MESSAGE_LENGTH);
 				if (word.length >= 2) {
@@ -123,6 +127,15 @@ public class Parser {
 				if (word.length >= 2) {
 					command.setParam1(getFirstTextInBrackets(input));
 				}
+			case Command.CHOICE_A:
+				command.setWord(Command.CHOICE_A);
+				break;
+			case Command.CHOICE_B:
+				command.setWord(Command.CHOICE_B);
+				break;
+			case Command.CHOICE_C:
+				command.setWord(Command.CHOICE_C);
+				break;
 			default:
 				command.setWord(Command.INVALID_COMMAND);
 				break;

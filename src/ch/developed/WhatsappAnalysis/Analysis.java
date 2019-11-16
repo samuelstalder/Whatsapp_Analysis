@@ -15,6 +15,7 @@ import java.util.List;
 public class Analysis {
 
 	private static List<Message> messageList = new ArrayList<>();
+	private boolean gameIsRunning = false;
 
 
 	public static void main(String[] args) throws IOException {
@@ -25,7 +26,8 @@ public class Analysis {
 		//output.printWordList(top50Words, wordList.size());
 		//output.printActiveHour(req.activeHour());
 		output.welcome();
-		while(true) {
+		boolean isRunning = true;
+		while(isRunning) {
 			Command command = parser.readInput();
 			analysis.triggerCommand(command);
 		}		
@@ -85,8 +87,26 @@ public class Analysis {
 		case Command.FAVORITE_EMOJI:
 			output.favoriteEmoji(request.favoriteEmoji());
 			break;
+		case Command.ACTIVE_HOUR:
+			output.activeHour(request.activeHour());
+			break;
 		case Command.FAVORITE_WORDS:
 			output.favoriteWords(request.favoriteWords());
+			break;
+		case Command.AVERAGE_MESSAGE_LENGTH:
+			output.averageMessageLength(request.averageMessageLength(command.getParam1()));
+			break;
+		case Command.AVERAGE_MESSAGE_PER_DAY:
+			output.averageMessagePerDay(request.averageMessagePerDay(command.getParam1()));
+			break;
+		case Command.MEDIA_PER_MESSAGE:
+			output.mediaPerMessage(request.mediaPerMessage());
+			break;
+		case Command.MESSAGE_PER_PERSON:
+			//output
+			break;
+		case Command.MESSAGE_PER_DAY:
+			output.messagePerDay(request.mediaPerMessage());
 			break;
 		case Command.INVALID_COMMAND:
 			output.wrongCommand();
@@ -94,10 +114,26 @@ public class Analysis {
 		case Command.INVALID_PARAM:
 			output.wrongParam();
 			break;
+		case Command.CHOICE_A:			
+			/*
+			 * TODO: for w-guessing-game
+			if (gameIsRunning) {
+				if (isAnswerRight(Command.CHOICE_A)) {
+					output.correctAnswer();
+				} else {
+					getWrightAnswer();
+					output.wrongAnswer();
+				}
+			} else {
+				output.wrongCommand();
+			}
+			*/
+			break;
 		default:
 			output.wrongCommand();
 			break;
 		}
 	}
+	
 
 }

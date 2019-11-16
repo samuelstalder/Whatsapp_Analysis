@@ -24,15 +24,18 @@ public class Command {
 	public static final String TOTAL_MEDIA = "totalmedia";
 	//tops
 	public static final String FAVORITE_EMOJI = "emoji";
-	public static final String FAVORITE_WORDS = "words";
-	public static final String ACTIVE_DAY = "active";
+	public static final String FAVORITE_WORDS = "wordlist";
+	public static final String ACTIVE_HOUR = "activehour";
 	//averages
-	public static final String AVERAGE_MESSAGE_LENGTH = "avmesslength";
-	public static final String AVERAGE_MESSAGE_PER_DAY = "avmessperday";
+	public static final String AVERAGE_MESSAGE_LENGTH = "avmessagelength";
+	public static final String AVERAGE_MESSAGE_PER_DAY = "avmessageperday";
 	//comparison
 	public static final String MEDIA_PER_MESSAGE = "mediapermessage";
 	public static final String MESSAGE_PER_PERSON = "messageperperson";
-	public static final String MESSAGE_PER_DAY = "messageperday";
+	public static final String MESSAGE_PER_DAY = "messagesperday";
+	public static final String CHOICE_A = "A";
+	public static final String CHOICE_B = "B";
+	public static final String CHOICE_C = "C";
 	
 	
 	public static final String INVALID_COMMAND = "-1";
