@@ -30,7 +30,7 @@ To honor the developer:
 ```
 credits
 ```
-Get all messages with a specific word in it:
+Get all messages with a specific word in it: (Coming soon)
 ```
 searchword <username> <word>
 ```
@@ -64,11 +64,11 @@ activehour
 ```
 Get the top 10 most written words:
 ```
-wordlist <username>
+wordlist
 ```
 Get the average length of a message:
 ```
-avmessagelength <username>
+avmessagelength
 ```
 Get the average messages per day:
 ```
@@ -76,15 +76,15 @@ avmessagesperday
 ```
 Get the percentage of media:
 ```
-mediapermessage <username>
+mediapermessage
 ```
 Get the percentage of messages per person:
 ```
-messagesperperson <username>
+messagesperperson
 ```
 Get the percentage of messages per day:
 ```
-messageperday <username>
+messageperday
 ```
 
 
