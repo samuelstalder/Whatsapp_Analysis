@@ -70,23 +70,24 @@ Get the average length of a message:
 ```
 avmessagelength
 ```
-Get the average messages per day:
+Get the average messages per day:*
 ```
 avmessagesperday
 ```
-Get the percentage of media:
+Get the percentage of media:*
 ```
 mediapermessage
 ```
-Get the percentage of messages per person:
+Get the percentage of messages per person:*
 ```
-messagesperperson
+messagesperperson <username>
 ```
-Get the percentage of messages per day:
+Get the percentage of messages per day:*
 ```
 messageperday
 ```
 
+*don't work properly
 
 ## Good to know
 * The parameter <username> is always optional. If nothing is specified, it takes all participants.
