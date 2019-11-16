@@ -22,7 +22,7 @@ Get a overview analysis:
 ```
 analysis
 ```
-Start game "W-Guessing-Game". (Coming soon :)):
+Start game "W-Guessing-Game" (Coming soon :)):
 ```
 startgame
 ```
@@ -30,7 +30,7 @@ To honor the developer:
 ```
 credits
 ```
-Get all messages with e specific word in it:
+Get all messages with a specific word in it: (Coming soon)
 ```
 searchword <username> <word>
 ```
@@ -54,39 +54,40 @@ Get the amount of posted messages:
 ```
 totmessages <username>
 ```
-Get the most typed emoji:
+Get the most typed emoji: (Coming soon)
 ```
 emoji <username>
 ```
 Get the most active hour of the day:
 ```
-active <username>
+activehour
 ```
 Get the top 10 most written words:
 ```
-wordlist <username>
+wordlist
 ```
 Get the average length of a message:
 ```
-avmessagelength <username>
+avmessagelength
 ```
-Get the average messages per day:
+Get the average messages per day:*
 ```
 avmessagesperday
 ```
-Get the percentage of media:
+Get the percentage of media:*
 ```
-mediapermessage <username>
+mediapermessage
 ```
-Get the percentage of messages per person:
+Get the percentage of messages per person:*
 ```
 messagesperperson <username>
 ```
-Get the percentage of messages per day:
+Get the percentage of messages per day:*
 ```
-messageperday <username>
+messageperday
 ```
 
+*don't work properly
 
 ## Good to know
 * The parameter <username> is always optional. If nothing is specified, it takes all participants.
